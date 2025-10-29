@@ -1,0 +1,60 @@
+{% extends "main/base.html" %}
+
+{% block content %}
+<section class="container d-flex flex-column mt-5">
+  <div
+    class="row align-items-center justify-content-center g-0 h-lg-100 py-8"
+  >
+    <div class="col-lg-5 col-md-8 py-8 py-xl-0">
+      <div class="card shadow">
+        <div class="card-body p-6">
+          <div class="mb-4">
+            <h1 class="mb-1 fw-bold">Регистрация</h1>
+            <span>
+              У вас уже есть аккаунт?
+              <a href="login.html" class="ms-1"> Войти </a>
+            </span>
+          </div>
+          <form class="needs-validation" method="POST">
+            {% csrf_token %}
+            <div class="mb-3">
+              <label for="full_name" class="form-label">
+                Имя Фамилия
+              </label>
+              {{form.full_name}}
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label"> Адрес Email </label>
+              {{form.email}}
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label"> Пароль </label>
+              {{form.password1}}
+            </div>
+
+            <div class="mb-3">
+              <label for="password2" class="form-label"
+                >Подтверждения пароля
+              </label>
+              {{form.password2}}
+            </div>
+            <div class="mb-3">
+              <label for="password2" class="form-label"
+                >Выберите тип пользователя
+              </label>
+              {{form.user_type}}
+            </div>
+            <div>
+              <div class="d-grid">
+                <button type="submit" class="btn btn-primary">
+                  Зарегистрироваться
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock content %}
