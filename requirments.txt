@@ -1,0 +1,6 @@
+Django==5.2
+django-jazzmin
+environs
+shortuuid
+stripe
+Pillow
